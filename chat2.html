@@ -1,0 +1,131 @@
+<html>
+    <head>
+        <style>
+            body  {
+    background-image: url("https://tctechcrunch2011.files.wordpress.com/2016/03/chat-bot.jpg");
+    background-repeat: no-repeat;
+    background-color: #cccccc;
+    color: #7e99e9;
+    
+}
+ h1,label {
+    color: #7e99e9;
+}
+button{
+    background-color: #7e99e9; /* Green */
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.logoutLblPos{
+
+position:fixed;
+right:10px;
+top:5px;
+}
+
+        </style>
+            <script>
+                    function myFunction() {
+                        question_val = document.getElementById('question').value;
+                        console.log(question_val);
+                        if(question_val=="Lee office hours"){
+                            document.getElementById('question').value="";
+                            document.getElementById("demo").innerHTML = "HI! I am happy to assist you! ";
+                            document.getElementById("demo2").innerHTML = "Your Question: ";
+                            document.getElementById("demo2").innerHTML += question_val;
+                            document.getElementById("demo3").innerHTML = "Room FH-312 <br>";
+                            document.getElementById("demo3").innerHTML  += "Office hours: 10:00 am -5:00 pm <br>";
+                            
+                        }
+                        else if(question_val=="UMKC News"){
+                            document.getElementById('question').value="";
+                            document.getElementById("demo").innerHTML = "HI! I am happy to assist you! ";
+                            document.getElementById("demo2").innerHTML = "Your Question: ";
+                            document.getElementById("demo2").innerHTML += question_val;
+                            document.getElementById("demo3").innerHTML  = "This is the latest news in UMKC happening";
+                        }
+                        else if(question_val=="UMKC contact"){
+                            document.getElementById('question').value="";
+                            document.getElementById("demo").innerHTML = "HI! I am happy to assist you! ";
+                            document.getElementById("demo2").innerHTML = "Your Question: ";
+                            document.getElementById("demo2").innerHTML += question_val;
+                            document.getElementById("demo3").innerHTML  = "CELL: 1-800-775-8652 <br>";
+                            document.getElementById("demo3").innerHTML  += " EMAIL: admit@umkc.edu <br>";
+                            document.getElementById("demo4").innerHTML  = "You can visit website here: <a href='https://www.umkc.edu/admissions/contact_us.cfm'> https://www.umkc.edu/admissions/contact_us.cfm</a>";
+                        }
+                        else if(question_val=="courses in UMKC"){
+                            document.getElementById('question').value="";
+                            document.getElementById("demo").innerHTML = "HI! I am happy to assist you! ";
+                            document.getElementById("demo2").innerHTML = "Your Question: ";
+                            document.getElementById("demo2").innerHTML += question_val;
+                            document.getElementById("demo3").innerHTML  = "Civil Engineering (CIV-ENGR) <br>";
+                            document.getElementById("demo3").innerHTML  += "Computer Science (COMP-SCI) <br>";
+                            document.getElementById("demo3").innerHTML  += "Management Information Systems (MIS) <br>";
+                            document.getElementById("demo3").innerHTML  += "Electrical and Computer Engineering (E&C-ENGR) <br>";
+                            document.getElementById("demo4").innerHTML  = "You can visit website here: <a href='https://catalog.umkc.edu/course-offerings/graduate/'> https://catalog.umkc.edu/course-offerings/graduate/</a>";
+
+                        }
+                        else{
+                            document.getElementById('question').value="";
+                            document.getElementById("demo2").innerHTML = "Your Question: ";
+                            document.getElementById("demo2").innerHTML += question_val;
+                            document.getElementById("demo").innerHTML  = "Sorry. We are unable to assist you for this!";
+                            document.getElementById("demo4").innerHTML  = "search another question <a href='chat.html' > here</a>"
+                        }
+
+                    }
+                    function myFaqs(){
+                        document.getElementById('question').value="";
+                        document.getElementById("demo").innerHTML = "Following are the Frequently Asked Questions: ";
+                        document.getElementById("demo2").innerHTML = "1. I am a graduate student. What are my visit options? <br> ";
+                        document.getElementById("demo2").innerHTML += "2. How long is the campus tour? <br>";
+                        document.getElementById("demo2").innerHTML += "3. I am an international student. Do I come to the Office of Admissions to visit campus? <br>";
+                        document.getElementById("demo2").innerHTML += "4. I have special needs. Whom do I notify about my visit and any arrangements I may need? <br>";
+                        document.getElementById("demo2").innerHTML += "5. How do I get information about financial aid or housing? <br>";
+                        
+                    }
+            </script>
+    </head>            
+<body>
+<center>    
+<h1>WELCOME TO CHAT</h1>
+<label class="logoutLblPos">
+    <!-- <input name="submit2" type="submit" id="submit2" value="log out"> -->
+    <button id="btnlogout"> <a href="log1.html">logout</a></button>
+
+    </label>
+<p id="para1">
+    <table>
+        <tr>
+        <button id="btnlogout"> <a href="https://umkc.umsystem.edu/psp/prd/?cmd=login&languageCd=ENG&">PATHWAY</a></button>
+        <button id="btnlogout"> <a href="https://outlook.live.com/owa/">OUTLOOK</a></button>
+        <button id="btnlogout"> <a href="https://shib-idp.umsystem.edu/idp/profile/SAML2/POST/SSO?execution=e2s1">BLACKBOARD</a></button>
+        <button id="btnlogout"> <a href="https://www.umkc.edu">UMKC</a></button>
+        </tr>
+    </table>
+    <br>
+    <br>
+
+<label id="q1">Enter Questions here:</label>
+  <input type="text" name="question" id="question" style="height:50px;width:400px">
+  <br><br>
+  <button onclick="myFunction()" id="btn1"><a href="#">Ask</a></button>
+  <button id="btn3"><a href="chat.html">Change theme</a></button>
+  <button id="btn2" onclick="myFaqs()"><a href="#">FAQs</a></button>
+</p>
+<p id='history'></p>
+<p id="demo"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+<p id="demo4"></p>
+
+</body>    
+</center>
+</html>
